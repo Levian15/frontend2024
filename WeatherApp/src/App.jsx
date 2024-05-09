@@ -1,13 +1,17 @@
+import CityCard from './components/CityCard'
 
-import { getWeather } from './api/WeatherApi'
 
-const App=() =>{
-
-  getWeather()
+const App = () => {
 
   return (
-    <h1>Weather App</h1>
-    
+    <>
+      <h1>Weather App</h1>
+      <hr />
+      {
+          <CityCard/>
+      }
+
+    </>
   )
 }
 

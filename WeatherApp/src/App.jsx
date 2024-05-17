@@ -1,18 +1,28 @@
 import CityCard from './components/CityCard'
-
+import './assets/CSS/index.css'
+import SearchCity from './components/SearchCity'
+import { useState } from 'react'
 
 const App = () => {
+  const [cities, setCities]= useState(["Tuxtepec"])
 
   return (
-    <>
+    <div className='container'>
       <h1>Weather App</h1>
-      <hr />
+      <hr/>
+      <SearchCity cities={cities} setCities={setCities}/>
+      <hr/>
+      <div className="row">
       {
-          <CityCard/>
+        cities.map((city, index)=>(
+           <CityCard key={index} city={city}/>
+        ))
       }
-
-    </>
+      </div>
+    </div>
   )
 }
 
 export default App
+
+//https://mycolor.space/gradient
